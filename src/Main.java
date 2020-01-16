@@ -274,7 +274,7 @@ public class Main extends Application {
         Thread updateThread = new Thread(() -> {
             while (true) {
                 while (awaitsDrawing) {
-                    try { Thread.sleep(1); } catch (InterruptedException e) { e.printStackTrace(); }
+                    try { Thread.sleep(5); } catch (InterruptedException e) { e.printStackTrace(); }
                 }
                 updateAccelerations(pane.getWidth(), pane.getHeight());
                 awaitsDrawing = true;
@@ -299,8 +299,8 @@ public class Main extends Application {
      *  by using alignment, cohesion and separation forces in
      *  conjunction with border force.
      *
-     * @param xLimit the xLimit of the world, used to determinate borders
-     * @param yLimit the xLimit of the world, used to determinate borders
+     * @param xLimit the xLimit of the world, used to determine borders
+     * @param yLimit the xLimit of the world, used to determine borders
      */
     public void updateAccelerations(double xLimit, double yLimit) {
         // Loop all entities and update their accelerations in parallel
